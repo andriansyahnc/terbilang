@@ -1,6 +1,7 @@
 const ones = ["", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan"];
-const teens = ["", "Sebelas", "Dua Belas", "Tiga Belas", "Empat Belas", "Lima Belas", "Enam Belas", "Tujuh Belas", "Delapan Belas", "Sembilan Belas"];
+const teens = ["Sepuluh", "Sebelas", "Dua Belas", "Tiga Belas", "Empat Belas", "Lima Belas", "Enam Belas", "Tujuh Belas", "Delapan Belas", "Sembilan Belas"];
 const thousands = ["", "Ribu", "Juta", "Milyar"];
+const commas = ["Nol", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan"];
 
 function convertLessThanThousand(num) {
   if (num === 0) return "";
@@ -25,7 +26,7 @@ function convertLessThanThousand(num) {
   return result.join(' ');
 }
 
-function convertToWords(number) {
+const convertAfterCommasToWords = (number) => {
   if (number === 0) return "Nol";
   let result = "";
   let i = 0;
@@ -40,9 +41,31 @@ function convertToWords(number) {
       } else {
         result = convertLessThanThousand(part) + " " + result;
       }
+      console.log(result);
     }
     number = Math.floor(number / 1000);
     i++;
+  }
+  return result;
+}
+
+const getNumbers = (number) => {
+  return number.toString().split(".");
+}
+
+const convertCommaToWords = (number) => {
+  let result = ['koma'];
+  number.split('').forEach((num) => {
+    result.push(commas[num]);
+  })
+  return result.join(' ');
+}
+
+function convertToWords(number) {
+  const numbers = getNumbers(number);
+  let result = convertAfterCommasToWords(parseInt(numbers[0]));
+  if (numbers[1]) {
+    result = result + " " + convertCommaToWords(numbers[1]);
   }
   return result;
 }
