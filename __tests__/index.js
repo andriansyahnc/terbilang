@@ -29,6 +29,9 @@ test.each([
   [10101010, "Sepuluh Juta Seratus Satu Ribu Sepuluh"],
   [101010101, "Seratus Satu Juta Sepuluh Ribu Seratus Satu"],
   [1010101010, "Satu Milyar Sepuluh Juta Seratus Satu Ribu Sepuluh"],
+  [1.1, "Satu Koma Satu"],
+  [11.12, "Sebelas Koma Satu Dua"],
+  [11.103, "Sebelas Koma Satu Nol Tiga"],
 ])('Terbilang %i', (number, expected) => {
   expect(terbilang(number)).toBe(expected);
 });

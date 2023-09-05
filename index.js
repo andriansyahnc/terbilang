@@ -54,7 +54,7 @@ const getNumbers = (number) => {
 }
 
 const convertCommaToWords = (number) => {
-  let result = ['koma'];
+  let result = ['Koma'];
   number.split('').forEach((num) => {
     result.push(commas[num]);
   })
@@ -63,7 +63,7 @@ const convertCommaToWords = (number) => {
 
 function convertToWords(number) {
   const numbers = getNumbers(number);
-  let result = convertAfterCommasToWords(parseInt(numbers[0]));
+  let result = convertAfterCommasToWords(parseInt(numbers[0])).trim();
   if (numbers[1]) {
     result = result + " " + convertCommaToWords(numbers[1]);
   }
