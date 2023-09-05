@@ -16,3 +16,5 @@ node_modules/
 
 # Ignore any local configuration files
 *.env
+
+coverage/

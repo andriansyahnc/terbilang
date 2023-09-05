@@ -1,0 +1,22 @@
+{
+  "name": "terbilang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andriansyahnc/terbilang.git"
+  },
+  "author": "M Andriansyah Nurcahya (4andriansyah@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andriansyahnc/terbilang/issues"
+  },
+  "homepage": "https://github.com/andriansyahnc/terbilang#readme",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
