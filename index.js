@@ -41,7 +41,6 @@ const convertAfterCommasToWords = (number) => {
       } else {
         result = convertLessThanThousand(part) + " " + result;
       }
-      console.log(result);
     }
     number = Math.floor(number / 1000);
     i++;
